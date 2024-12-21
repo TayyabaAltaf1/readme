@@ -1,1 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    // JavaScript program to calculate and display the area of different shapes based on user input
 
+const PI = 3.14159; // Constant value for π
+
+// Prompt the user to enter the shape type
+const shape = prompt("Enter the shape type (circle, rectangle, triangle):").toLowerCase();
+
+if (shape === "circle") {
+    const radius = parseFloat(prompt("Enter the radius of the circle:"));
+    if (isNaN(radius) || radius <= 0) {
+        alert("Please enter a valid radius.");
+    } else {
+        const area = PI * radius * radius;
+        alert(`The area of the circle is ${area.toFixed(2)}.`);
+    }
+} else if (shape === "rectangle") {
+    const length = parseFloat(prompt("Enter the length of the rectangle:"));
+    const width = parseFloat(prompt("Enter the width of the rectangle:"));
+    if (isNaN(length) || isNaN(width) || length <= 0 || width <= 0) {
+        alert("Please enter valid dimensions.");
+    } else {
+        const area = length * width;
+        alert(`The area of the rectangle is ${area.toFixed(2)}.`);
+    }
+} else if (shape === "triangle") {
+    const base = parseFloat(prompt("Enter the base of the triangle:"));
+    const height = parseFloat(prompt("Enter the height of the triangle:"));
+    if (isNaN(base) || isNaN(height) || base <= 0 || height <= 0) {
+        alert("Please enter valid dimensions.");
+    } else {
+        const area = (base * height) / 2;
+        alert(`The area of the triangle is ${area.toFixed(2)}.`);
+    }
+} else {
+    alert("Invalid shape type entered. Please refresh and try again.");
+}
+</script>
+</body>
+</html>
